@@ -54,7 +54,7 @@ def go(args):
     ######################################
     # Use run.use_artifact(...).file() to get the train and validation artifact (args.trainval_artifact)
     # and save the returned path in train_local_pat
-    trainval_local_path = run.use_artifact(args.input_artifact).file()
+    trainval_local_path = run.use_artifact(args.trainval_artifact).file()
     ######################################
 
     X = pd.read_csv(trainval_local_path)
@@ -112,14 +112,16 @@ def go(args):
     # run.log_artifact to log the artifact to the run
     # YOUR CODE HERE
 
+
     ######################################
 
-    artifact = wandb.Artifact(
-        sk_pipe,
+    artifact = wandb.Artifact(args.output_artifact,
         type="model_export",
         description="Random Forest pipeline export",
+        metadata=rf_config
     )
-    artifact.add_dir( "random_forest_dir")
+    artifact.add_dir("random_forest_dir")
+    run.log_artifact(artifact)
 
     # Plot feature importance
     fig_feat_imp = plot_feature_importance(sk_pipe, processed_features)
@@ -236,7 +238,7 @@ def get_inference_pipeline(rf_config, max_tfidf_features):
     sk_pipe = Pipeline(
         steps=[
             ("preprocessor", preprocessor),
-            ("classifier", random_Forest),
+            ("random_forest", random_Forest),
         ]
     )
     return sk_pipe, processed_features
