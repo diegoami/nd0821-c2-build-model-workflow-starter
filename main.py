@@ -1,5 +1,4 @@
 import json
-
 import mlflow
 import tempfile
 import os
@@ -15,7 +14,6 @@ _steps = [
     "train_random_forest",
 
 ]
-
 
 # This automatically reads in the configuration
 @hydra.main(config_name='config')
@@ -59,8 +57,6 @@ def go(config: DictConfig):
                 },
             )
 
-
-
         if "data_check" in active_steps:
             _ = mlflow.run(
                 os.path.join(hydra.utils.get_original_cwd(), "src", "data_check"),
@@ -73,10 +69,6 @@ def go(config: DictConfig):
                     "max_price": config['etl']['max_price']
                 },
             )
-
-
-
-
 
         if "data_split" in active_steps:
             _ = mlflow.run(
@@ -96,13 +88,6 @@ def go(config: DictConfig):
             rf_config = os.path.abspath("rf_config.json")
             with open(rf_config, "w+") as fp:
                 json.dump(dict(config["modeling"]["random_forest"].items()), fp)  # DO NOT TOUCH
-
-            # NOTE: use the rf_config we just created as the rf_config parameter for the train_random_forest
-            # step
-
-            ##################
-            # Implement here #
-            ##################
 
             _ = mlflow.run(
                 os.path.join(hydra.utils.get_original_cwd(), "src", "train_random_forest"),
