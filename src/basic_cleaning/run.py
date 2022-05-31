@@ -33,9 +33,12 @@ def go(args):
     min_price = 10
     max_price = 350
     idx = df['price'].between(min_price, max_price)
+    idx = df['longitude'].between(-74.25, -73.50) & df['latitude'].between(40.5, 41.2)
+
     df = df[idx].copy()
     # Convert last_review to datetime
     df['last_review'] = pd.to_datetime(df['last_review'])
+
     df.to_csv("clean_sample.csv", index=False)
     artifact = wandb.Artifact(
         name=args.output_artifact,
