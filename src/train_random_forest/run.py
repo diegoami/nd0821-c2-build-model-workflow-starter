@@ -298,5 +298,6 @@ if __name__ == "__main__":
     )
 
     args = parser.parse_args()
+    logging.info(f"RF_CONFIG: {args.rf_config}")
 
     go(args)
