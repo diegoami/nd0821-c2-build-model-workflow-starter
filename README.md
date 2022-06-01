@@ -4,21 +4,21 @@ Creation of a model to predict the short rental prices in NYC, using MLFlow and 
 
 # Table of Contents
 * [Overview](#Overview)
-** [Data Set](#Data-Set)
-** [Completed Pipeline](#Completed-Pipeline)
-** [Model Detail](#Model-Detail)
-** [Github Release](#Github-Release)
+    * [Data Set](#Data-Set)
+    * [Completed Pipeline](#Completed-Pipeline)
+    * [Model Detail](#Model-Detail)
+    * [Github Release](#Github-Release)
 * [Pipeline replication](#Pipeline-Replication)
-** [Create environment](#Create-Environment)
-** [Weights and Biases](#Weights-and-Biases)
-** [Download and clean data](#Download-and-clean-data) 
-** [EDA](#EDA)
-** [Data testing](#Data-testing)
-** [Data splitting](#Data-splitting)
-** [Optimize hyperparameters](#Optimize-hyperparameters)
-** [Select the best model](#Select-the-best-model)
-** [Regression Test](#Regression-Test)
-* 
+    * [Create environment](#Create-Environment)
+    * [Weights and Biases](#Weights-and-Biases)
+    * [Download and clean data](#Download-and-clean-data) 
+    * [EDA](#EDA)
+    * [Data testing](#Data-testing)
+    * [Data splitting](#Data-splitting)
+    * [Optimize hyperparameters](#Optimize-hyperparameters)
+    * [Select the best model](#Select-the-best-model)
+    * [Regression Test](#Regression-Test)
+
 
 ## Overview
 
