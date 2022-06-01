@@ -2,6 +2,8 @@
 
 Creation of a model to predict the short rental prices in NYC, using MLFlow and Weight & Biases
 
+Location: [https://github.com/diegoami/nd0821-c2-build-model-workflow-starter](https://github.com/diegoami/nd0821-c2-build-model-workflow-starter)
+
 # Table of Contents
 * [Overview](#Overview)
     * [Data Set](#Data-Set)
