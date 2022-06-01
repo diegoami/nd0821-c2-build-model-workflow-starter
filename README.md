@@ -1,14 +1,35 @@
 # Build an ML Pipeline for Short-Term Rental Prices in NYC
 
-Creation of a model to predict the short rental prices in NYC.
+Creation of a model to predict the short rental prices in NYC, using MLFlow and Weight & Biases
 
+# Table of Contents
+* [Overview](#Overview)
+** [Data Set](#Data-Set)
+** [Completed Pipeline](#Completed-Pipeline)
+** [Model Detail](#Model-Detail)
+** [Github Release](#Github-Release)
+* [Pipeline replication](#Pipeline-Replication)
+** [Create environment](#Create-Environment)
+** [Weights and Biases](#Weights-and-Biases)
+** [Download and clean data](#Download-and-clean-data) 
+** [EDA](#EDA)
+** [Data testing](#Data-testing)
+** [Data splitting](#Data-splitting)
+** [Optimize hyperparameters](#Optimize-hyperparameters)
+** [Select the best model](#Select-the-best-model)
+** [Regression Test](#Regression-Test)
+* 
 
-## Table of contents
+## Overview
 
+### Data Set 
+
+The Data Set is contains prices of short rentals for apartments in NYC. We want to create a model to be able to predict rental prices
+based on features, such as description, room type, location etc.
 
 ### Completed pipeline
 
-The full pipeline has already been fine-tuned and executed. Artifacts have been uploaed to Weights & Biases and can be found
+A full pipeline to create a AI MODEL has been fine-tuned and executed, using MLFlow. Artifacts have been uploaed to Weights & Biases and can be found
 in the public project [https://wandb.ai/diegoami/nyc_airbnb](https://wandb.ai/diegoami/nyc_airbnb)
 
 The trained model which is giving the best result is [
@@ -25,13 +46,13 @@ such as _room_type_ and _neighborhood group_.
 To find the best model we use a grid search, the best hyperparameters have been saved in the _config.yaml_ file. 
 
 
-### Github release
+### Github Release
 
 The completed pipeline has been released on Github, version [1.0.3](https://github.com/diegoami/nd0821-c2-build-model-workflow-starter/releases/tag/1.0.3)
 
-## Pipeline replication 
+## Pipeline Replication 
 
-### Create environment
+### Create Environment
 Mlflow is needed to execute the pipeline.
 Make sure to have conda installed and ready, then create a new environment using the ``environment.yml``
 file provided in the root of the repository and activate it:
@@ -41,7 +62,7 @@ file provided in the root of the repository and activate it:
 > conda activate nyc_airbnb_dev
 ```
 
-### Get API key for Weights and Biases
+### Weights and Biases
 Let's make sure we are logged in to Weights & Biases. Get your API key from W&B by going to 
 [https://wandb.ai/authorize](https://wandb.ai/authorize) and click on the + icon (copy to clipboard), 
 then paste your key into this command:
@@ -50,10 +71,7 @@ then paste your key into this command:
 > wandb login [your API key]
 ```
 
-
-
-
-### Download, clean data
+### Download and clean data
 
 Go to the project root, and execute:
 
