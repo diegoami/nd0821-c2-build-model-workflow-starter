@@ -23,9 +23,7 @@ def go(args):
     df = pd.read_csv(artifact_local_path)
 
     # Drop outliers
-    min_price = 10
-    max_price = 350
-    idx = df['price'].between(min_price, max_price) & df['longitude'].between(-74.25, -73.50) & df['latitude'].between(40.5, 41.2)
+    idx = df['price'].between(args.min_price, args.max_price) & df['longitude'].between(-74.25, -73.50) & df['latitude'].between(40.5, 41.2)
 
     df = df[idx].copy()
     # Convert last_review to datetime

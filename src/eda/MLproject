@@ -3,4 +3,4 @@ conda_env: conda.yml
 
 entry_points:
   main:
-    command: jupyter notebook
+    command: jupyter notebook --NotebookApp.iopub_data_rate_limit=1e10 --NotebookApp.rate_limit_window=30.0
